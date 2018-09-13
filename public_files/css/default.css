@@ -1,0 +1,20 @@
+.inputField {
+	margin-top: 5px;
+}
+
+.inputField input[type='text'], .inputField input[type='password'], .inputField input[type='email']{
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #EEE;
+	border-radius: 5px;
+	height: 40px;
+        color: black;
+}
+
+.inputField input[type='submit'] {
+	background: #4aaee7;
+	border: none;
+	padding: 5px;
+	color: black;
+	border-radius: 5px;
+}

@@ -1,0 +1,82 @@
+
+.footer {
+    flex-grow: 1;
+    margin: 5px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.footer > .footer-container{
+    display: flex;
+
+}
+.footer > .footer-container > .footer-item{
+    flex: 1;
+    width: 300px;
+
+}
+
+.footer-item ul{
+    text-decoration: underline;
+    font-size: x-large;
+
+}
+.footer-item ul li{
+    text-decoration: none;
+    font-size: large;
+    list-style: none;
+}
+.footer-social{
+    border-top: solid white 5px;
+    background-color: red;
+    flex: 6;
+    height: 50px;
+    margin: 5px;
+}
+.footer-social > .innerSocial{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    vertical-align: central;
+    line-height: 50px;
+}
+.footer-social > .innerSocial > .icons {
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+    -webkit-flex-grow: 0; /* Safari 6.1+ */
+    -webkit-flex-shrink: 0; /* Safari 6.1+ */
+    -webkit-flex-basis: 300px; /* Safari 6.1+ */
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 300px;
+} 
+.footer-social > .innerSocial > .icons li{
+    flex: 1;
+    list-style: none;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+}
+.footer-social > .innerSocial > .icons li img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+}
+.footer-social > .innerSocial > .trademark{
+    flex: 2;
+    flex-flow: row wrap;
+    -webkit-flex-grow: 0; /* Safari 6.1+ */
+    -webkit-flex-shrink: 0; /* Safari 6.1+ */
+    -webkit-flex-basis: 300px; /* Safari 6.1+ */
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 300px;
+}

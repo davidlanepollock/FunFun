@@ -1,0 +1,127 @@
+.product_core{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    height: 700px;
+    flex-flow:row wrap;
+    min-width: 600px;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+.product_core > .product_picture{
+    flex-flow:row wrap;
+    font-size:x-large;
+    display: flex;
+    height: 350px;
+    flex-basis: 30%;
+    text-align: center;
+    min-width: 425px;
+    background-color: pink;
+}
+.product_core > .product_picture #more_product_images{
+    flex-flow: column;
+    flex-basis: 75px;
+    min-width: 75px;
+    background-color: violet;
+    height: 100%;
+}
+.product_core > .product_picture #more_product_images .product_side_image{
+    width: 60px;
+    margin-top: 3px;
+    border: 2px solid transparent;
+}
+.product_core > .product_picture #more_product_images .product_side_image:hover{
+    border: 2px solid red;
+    cursor: pointer;
+}
+.product_core > .product_picture #main_product_image{
+    flex-flow: column;
+    flex-basis: 350px;
+    background-color: indigo;
+    height: 100%;
+}
+.product_core > .product_picture #main_product_image #main_product_image_url{
+    width: 350px;
+    min-width: 225px;
+}
+.product_core #product_name_placeholder{
+    flex-flow:column;
+    font-size:x-large;
+    height: 350px;
+    flex-basis: 70%;
+    text-align: center;
+    min-width: 300px;
+    background-color: blue;
+}
+.product_core #product_points_placeholder{
+    flex-flow:column;
+    font-size:x-large;
+    height: 350px;
+    flex-basis: 75%;
+    min-width: 600px;
+    background-color: red;
+    text-align: center;
+}
+.product_core #product_checkout{
+    flex-flow:column;
+    flex-basis: 25%;
+    height: 350px;
+    background-color: black;
+    min-width: 300px;
+    
+}
+.product_core #product_checkout .product_checkout_button{
+    display: flex;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    background-color: purple;
+}
+.product_core #product_checkout .product_checkout_button #checkoutSelect{
+    flex-flow: row wrap;
+    height: 100%;
+    width: 80px;
+    background-color: red;
+}
+.product_core #product_checkout .product_checkout_button .product_checkout_button_cart{
+    flex-flow: row wrap;
+    width: 200px;
+    height: 100%;
+    background-color: pink;
+}
+#product_spec_placeholder{
+    flex-flow:column;
+    flex-basis: 100%;
+    background-color: black;
+    min-width: 600px;
+    min-height: 40px;
+}
+#product_manu_desc{
+    flex-flow:column;
+    flex-basis: 100%;
+    background-color: black;
+    min-width: 600px;
+    min-height: 40px;
+}
+.target_recommendations{
+    width: 100%;
+    display: flex;
+    height: 405px;
+    flex-flow:row wrap;
+    min-width: 600px;
+}
+.target_recommendations #product_also_viewed{
+    flex-flow: column;
+    flex-basis: 100%;
+    min-width: 75px;
+    background-color: violet;
+    height: 200px;
+}
+.target_recommendations #product_recommended{
+    flex-flow: column;
+    flex-basis: 100%;
+    min-width: 75px;
+    background-color: red;
+    height: 200px;
+}

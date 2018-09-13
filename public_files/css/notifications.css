@@ -1,0 +1,78 @@
+* {
+	font-family: 'open Sans', Tahoma, Helvetica, sans-serif;
+}
+body{
+    background-color: #EBE9E9;
+}
+.not-head{
+    width: 100%;
+    font-size:xx-large;
+    margin-top: 20px;
+}
+.not-middle {
+    width: 100%;
+    background-color: #ffffff;
+}
+.not-middle > .not-in {
+    height: 60px;
+    width: 100%;
+    border-bottom: black 1px solid;
+}
+.not-middle > .not-in button{
+    float: right;
+    margin-bottom: 2px;
+    height: 50%;
+    width: 80px;
+    margin-top: 15px;
+}
+.not-middle > .not-in b {
+    color: black;
+}
+.not-middle > .not-in img {
+    margin-left: 10px;
+}
+.not-middle > .not-in text{
+    position:absolute;
+    margin-top: 20px;
+    margin-left: 5px;
+    color: black;
+}
+.not-middle > .not-in > .response{
+    display: inline-block;
+    margin-top: -40px;
+    text-align: right;
+    margin-left:80%;
+    color: black;
+}
+.not-middle > .not-inv {
+    height: 60px;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: black 1px solid;
+}
+.not-middle > .not-inv img {
+    margin-left: 10px;
+}
+.not-middle > .not-inv text{    
+    position:absolute;
+    margin-top: 20px;
+    margin-left: 5px;
+    color: black;
+}
+.not-middle > .not-inv b {
+    color: black;
+}
+.not-middle > .not-inv button{
+    float: right;
+    margin-bottom: 2px;
+    height: 50%;
+    width: 80px;
+    margin-top: 15px;
+}
+.not-middle > .not-inv > .response{
+    display: inline-block;
+    margin-top: -40px;
+    text-align: right;
+    margin-left:80%;
+    color: black;
+}

@@ -1,0 +1,194 @@
+* {
+    font-family: 'open Sans', Tahoma, Helvetica, sans-serif;
+}
+body{
+    background-color: #EBE9E9;
+}
+.core{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    min-height: 150px;
+    flex-flow:row wrap;
+    min-width: 300px;
+}
+
+@media screen and (min-width: 100px){
+    .core > .column{
+        background-color: red;
+        flex-flow: row wrap;
+        -webkit-flex-grow: 0; /* Safari 6.1+ */
+        -webkit-flex-shrink: 0; /* Safari 6.1+ */
+        -webkit-flex-basis: 120px; /* Safari 6.1+ */
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 120px;
+        flex: 1;
+        padding: 16px;
+        width: 33.3%;
+        margin: 5px;
+    }
+    .menu{
+        display: flex;
+        height: 30px;
+        text-align: center;
+        vertical-align: central;
+        line-height: 30px;
+    }
+    .hover:hover{
+        background-color: blue;
+        cursor: pointer;
+    }
+    .hover{
+        background-color: transparent;
+    }
+    .no-hover{
+        cursor: default;
+    }
+    .content-full > .menu-item{
+        cursor: pointer;
+        transition-property: background;
+        transition-duration: .3s;
+        transition-timing-function: linear;
+        flex: 1;
+        flex-flow: row wrap;
+        -webkit-flex-grow: 0; /* Safari 6.1+ */
+        -webkit-flex-shrink: 0; /* Safari 6.1+ */
+        -webkit-flex-basis: 100px; /* Safari 6.1+ */
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100px;
+        height: 100%;
+    }
+    .content-full > .menu-item a{
+        text-decoration: none;
+    }
+    .menu-right{
+        cursor: default;
+        flex: 1;
+        flex-flow: row wrap;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 200px;
+        align-content: space-between;
+        height: 100%;
+        margin-left: auto;
+        color: black;
+        font-weight: bold;
+    }
+    .menu-item:hover{
+        background-color: white;
+        color: red;
+    }
+    .content-full{
+        background-color: red;
+        flex-flow: row wrap;
+        -webkit-flex-grow: 0; /* Safari 6.1+ */
+        -webkit-flex-shrink: 0; /* Safari 6.1+ */
+        -webkit-flex-basis: 300px; /* Safari 6.1+ */
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 300px;
+        flex: 1 100%;
+        margin: 5px;
+       
+    }
+    .content-full-body{
+        padding: 16px;
+    }
+    #campaignList{
+    }
+    #campaignList > .campaignElement{
+       display: flex;
+    }
+    #campaignList > .campaignElement > .list-item{
+        flex: 1;
+        display: flex;
+    }
+    #campaignList > .campaignElement > .list-item >  .enabled{
+        background-color: green;
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex: 1;
+        flex-flow: row wrap;
+        margin:5px;
+        max-width: 20px;
+    }
+    #campaignList > .campaignElement > .list-item > .disabled{
+        background-color: yellow;
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex: 1;
+       flex-flow: row wrap;
+        margin: 5px;
+        max-width: 20px;
+    }
+    #campaignList > .campaignElement > .list-item > .element{
+        flex: 2;
+        flex-flow: row wrap;
+       
+        margin: 5px;
+    }
+    .container-head{
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .inner-core{
+        display: flex;
+        width: 100%;
+        text-align: center;
+        flex-flow:row wrap;
+        justify-content: center;
+    }
+    .inner-core > .content{
+        width: 33.3%;
+        flex: 1;
+        flex-flow: row wrap;
+        -webkit-flex-grow: 0; /* Safari 6.1+ */
+        -webkit-flex-shrink: 0; /* Safari 6.1+ */
+        -webkit-flex-basis: 100px; /* Safari 6.1+ */
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100px;
+
+    }
+    .inner-core > .content > .content-head{
+        font-weight: bold;
+        display: inline;
+        width: 100%;
+        white-space: nowrap;
+    }
+    .inner-core > .content > .content-body{
+        width: 100%;
+    }
+    .inner-core > .content text{
+        display: inline;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .core > .middle-column{
+        background-color: black;
+        flex: 1;
+        padding: 16px;
+        width: 33.3%;
+    }
+    .core > .right-column{
+        background-color: yellow;
+        flex: 1;
+        padding: 16px;
+        width: 33.3%;
+    }
+
+}
+//@media screen and (max-width: 800px){
+
+
+//}
