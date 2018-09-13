@@ -28,8 +28,7 @@
             <li><a href="https://www.facebook.com/msdmerch"><img src="<?= APP_URL ?>/public_files/includes/if_square-facebook_317727.svg" width="30px" height="30px"></a></li>
                 <li><a href="https://www.linkedin.com/company/msd-merch/"><img src="<?= APP_URL ?>/public_files/includes/if_square-linkedin_317725.svg" width="30px" height="30px"></a></li>
                 <li><a href="https://twitter.com/msd_merch"><img src="<?= APP_URL ?>/public_files/includes/if_square-twitter_317723.svg" width="30px" height="30px"></a></li>
-               <!-- <li><a href=""><img src="<?= APP_URL ?>/public_files/includes/if_youtube_317714.svg" width="30px" height="30px"></a></li> -->
-           
+              
         </div>
         <div class="trademark">
             
