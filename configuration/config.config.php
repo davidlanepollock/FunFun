@@ -4,6 +4,7 @@
 require 'configuration/config.define.php';
 require LIBS_ROOT . 'Database.php';
 require LIBS_ROOT . 'Controller.php';
+require LIBS_ROOT . 'Cart.php';
 require LIBS_ROOT . 'View.php';
 require LIBS_ROOT . 'Model.php';
 require LIBS_ROOT . 'Sessions.php';

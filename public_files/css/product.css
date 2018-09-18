@@ -71,24 +71,32 @@
     
 }
 .product_core #product_checkout .product_checkout_button{
-    display: flex;
     width: 280px;
     margin-left: auto;
     margin-right: auto;
-    height: 60px;
+    height: 130px;
     background-color: purple;
+}
+.product_core #product_checkout .product_checkout_button label{
+    height: 60px;
 }
 .product_core #product_checkout .product_checkout_button #checkoutSelect{
     flex-flow: row wrap;
-    height: 100%;
-    width: 80px;
+    height: 60px;
+    width: 60%;
     background-color: red;
 }
 .product_core #product_checkout .product_checkout_button .product_checkout_button_cart{
+    cursor: pointer;
+    margin-top: 10px;
     flex-flow: row wrap;
-    width: 200px;
-    height: 100%;
+    width: 100%;
+    height: 60px;
     background-color: pink;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    line-height: 60px;
 }
 #product_spec_placeholder{
     flex-flow:column;

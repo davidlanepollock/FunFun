@@ -7,6 +7,7 @@ class product_model extends Model {
     }
 
     public function get_product($product_id = 'null', $product_name = 'null') {
+        
         $page_obj = null;
         if ($product_id != 'null') {
             $id = filter_var($product_id, FILTER_SANITIZE_NUMBER_INT);
@@ -14,10 +15,15 @@ class product_model extends Model {
                 $page_obj = $this->grabCache($product_id);
             } else {
                 $db = $this->database;
+                try{
                 $query = $db->select("SELECT * FROM product WHERE id='{$id}'");
                 if ($db->getRowCount($query) == 1) {
                     $page_obj = $this->generate_page($query);
                     $this->createCache($product_id, $page_obj);
+                }}catch(Exception $ex)
+                {
+                    //do something
+                    echo "error in model";
                 }
             }
         }

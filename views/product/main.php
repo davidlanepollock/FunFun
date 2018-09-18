@@ -22,9 +22,10 @@
     <div id="product_points_placeholder"></div>
     <div id="product_checkout">
         <div class="product_checkout_shipto"></div>
-        <div class="product_checkout_button">
+        <div class="product_checkout_button"> 
+            <label>Quantity: </label>
             <select id="checkoutSelect" name="quantity"></select> 
-            <div class="product_checkout_button_cart">Add To Cart </div>
+            <div id="addproducttoCart"  class="product_checkout_button_cart">Add To Cart </div>
         </div>
     </div>
 

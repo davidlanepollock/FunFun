@@ -40,20 +40,36 @@ class product extends Controller {
     }
 
     public function grab_product() {
-        $temp = filter_input(INPUT_POST, 'auth', FILTER_SANITIZE_NUMBER_INT);
-        if (Sessions::get('pageGen') == $temp) {
-            $this->loadModel('product');
-            $product['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 
-            $product['id'] =  filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-            if (!isset($product['id'])) {
-                echo "Invalid Product ID";
+        try {
+            $temp = filter_input(INPUT_POST, 'auth', FILTER_SANITIZE_NUMBER_INT);
+            if (Sessions::get('pageGen') == $temp) {
+                $this->loadModel('product');
+                $product['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+                $product['id'] = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+                if (!isset($product['id'])) {
+                    echo "Invalid Product ID";
+                } else {
+                    $product['outputproduct'] = $this->model->get_product($product['id'], $product['name']);
+                    echo json_encode($product);
+                }
             } else {
-                $product['outputproduct'] = $this->model->get_product($product['id'], $product['name']);
-                echo json_encode($product);
+                echo "Invalid Authorization Token";
             }
+        } catch (Exception $ex) {
+            echo "error in controller;";
+        }
+    }
+
+    public function add_cart($product_id = null, $seller_id = null) {
+        if ($product_id == null && $seller_id == null) {
+            $product_id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+            $seller_id = filter_input(INPUT_POST, 'sid', FILTER_SANITIZE_NUMBER_INT);
+        }
+        if ($product_id != null || $seller_id != null) {
+            echo "no product or seller id";
         } else {
-            echo "Invalid Authorization Token";
+            echo "boom";
         }
     }
 
