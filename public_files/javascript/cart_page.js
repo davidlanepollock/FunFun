@@ -8,13 +8,13 @@ var IMG1;
 var IMG2;
 var IMG3;
 var IMG4;
-function product_grab(product_id, product_name, product_auth)
+function cart_grab(product_auth)
 {
     jQuery.ajax({
         type: "POST",
-        url: '/product/grab_product',
+        url: '/shoppingcart/grab_cart',
         dataType: 'json',
-        data: {id: product_id, name: product_name, auth: product_auth},
+        data: {auth: product_auth},
 
         success: function (obj) {
             document.getElementById('product_name_placeholder').innerHTML = obj.outputproduct.name;
@@ -26,37 +26,7 @@ function product_grab(product_id, product_name, product_auth)
             document.getElementById('product_spec_placeholder').innerHTML = obj.outputproduct.specs;
             document.getElementById('main_product_image_url').src = obj.outputproduct.mainIMG;
             document.getElementById('product_image_url0').src = obj.outputproduct.smainIMG;
-            var sellerID = obj.outputproduct.recommendedsid;
-            document.getElementById('addproducttoCart').addEventListener("click", function () {
-                addtoCart(product_id, sellerID)
-            });
-            hideSidePictures();
-            document.getElementById('product_image_url0').style = "visability: visable;"
-            IMG0 = obj.outputproduct.IMG0;
-            if (obj.outputproduct.IMG1 !== 'null')
-            {
-                IMG1 = obj.outputproduct.IMG1;
-                document.getElementById('product_image_url1').src = obj.outputproduct.sIMG1;
-                document.getElementById('product_image_url1').style = "visability: visable;"
-            }
-            if (obj.outputproduct.IMG2 !== 'null')
-            {
-                IMG2 = obj.outputproduct.IMG2;
-                document.getElementById('product_image_url2').src = obj.outputproduct.sIMG2;
-                document.getElementById('product_image_url2').style = "visability: visable;"
-            }
-            if (obj.outputproduct.IMG3 !== 'null')
-            {
-                IMG3 = obj.outputproduct.IMG3;
-                document.getElementById('product_image_url3').src = obj.outputproduct.sIMG3;
-                document.getElementById('product_image_url3').style = "visability: visable;"
-            }
-            if (obj.outputproduct.IMG4 !== 'null')
-            {
-                IMG4 = obj.outputproduct.IMG4;
-                document.getElementById('product_image_url4').src = obj.outputproduct.sIMG4;
-                document.getElementById('product_image_url4').style = "display: inline-flex;"
-            }
+            
         }}
 
     );

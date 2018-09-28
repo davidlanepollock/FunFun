@@ -3,6 +3,10 @@
 date_default_timezone_set('America/Chicago');
 require 'configuration/config.config.php';
 Sessions::start_session();
+if(Sessions::get("s_id") == '')
+{
+    Sessions::set("s_id", uniqid(true) . session_id());
+}
 Sessions::set('js', false);
 /* Router */
 if (isset($_GET['url'])) {

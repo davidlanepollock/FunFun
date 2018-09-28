@@ -1,9 +1,7 @@
-<script type="text/javascript" src="/public_files/javascript/product_page.js"></script>
+<script type="text/javascript" src="/public_files/javascript/cart_page.js"></script>
 <?= Sessions::get('s_id'); ?>
 <script type="text/javascript">
-    product_id = <?= $this->product_id; ?>;
-    product_name = <?= $this->product_name; ?>;
-    product_grab(product_id, product_name, <?= $this->auth; ?>);
+    cart_grab(<?= $this->auth; ?>);
 </script>
 <div class="product_core">
     <div class="product_picture">
