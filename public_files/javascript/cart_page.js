@@ -15,18 +15,27 @@ function cart_grab(product_auth)
         url: '/shoppingcart/grab_cart',
         dataType: 'json',
         data: {auth: product_auth},
-
+        
         success: function (obj) {
-            document.getElementById('product_name_placeholder').innerHTML = obj.outputproduct.name;
-            document.getElementById('product_points_placeholder').innerHTML = obj.outputproduct.desc;
-            checkoutQuantity(obj.outputproduct.checkoutquantity);
-            document.getElementById('product_manu_desc').innerHTML = obj.outputproduct.manufacturer;
-            document.getElementById('product_also_viewed').innerHTML = obj.outputproduct.othersViewed;
-            document.getElementById('product_recommended').innerHTML = obj.outputproduct.recommended;
-            document.getElementById('product_spec_placeholder').innerHTML = obj.outputproduct.specs;
-            document.getElementById('main_product_image_url').src = obj.outputproduct.mainIMG;
-            document.getElementById('product_image_url0').src = obj.outputproduct.smainIMG;
-            
+            document.getElementById('cart-items').innerHTML = '';
+            for(var i = 0; i < obj.length; i++)
+            {
+                var newElement = document.createElement('div');
+                newElement.setAttribute('id', 'cart-item');
+                newElement.innerHTML = '<div id="cart-item-picture"></div>\n\
+                <div id="cart-item-title">'+obj[i].product_info.name +'\n\
+                <div id="cart-item-seller">By: MSD Merch</div></div>\n\
+                <div id="cart-item-quantity"></div>\n\
+                <div id="cart-item-price">\n\
+                <div id="cart-item-o-price">$19.33</div>\n\
+                <div id="cart-item-s-price">$14.95</div></div>\n\
+                <div id="cart-actions">\n\
+                <div id="cart-item-remove" onClick="removefromCart('+obj[i].product_id + ',' + obj[i].seller_id +')">X</div>\n\
+                <div id="cart-item-save">Save</div></div></div>';
+           document.getElementById('cart-items').appendChild(newElement);
+           
+        
+                }
         }}
 
     );
@@ -55,14 +64,16 @@ function removefromCart(product_id, seller_id)
 {
     jQuery.ajax({
         type: "POST",
-        url: '/product/remove_cart',
+        url: '/shoppingcart/remove_cart',
         dataType: 'json',
         data: {id: product_id, sid: seller_id},
 
         success: function (obj) {
             
-            print("hello");
+            //if successfully removed
+            window.location.reload(true); 
         }})
+    window.location.reload(true); 
 }
 ;
 function checkoutQuantity(quantity)

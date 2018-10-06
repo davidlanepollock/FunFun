@@ -1,7 +1,7 @@
 <?php
 /* Sessions */
 define('APP_URL', '');
-define('APP_NAME', 'MSD Merch Funnel');
+define('APP_NAME', 'MSD Merch');
 
 /* Website Link roots */
 define('LIBS_ROOT','libraries/'); // Library root

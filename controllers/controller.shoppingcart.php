@@ -96,13 +96,14 @@ class shoppingcart extends Controller {
         $productID = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
         $sellerID = filter_input(INPUT_POST, 'sid', FILTER_SANITIZE_NUMBER_INT);
         try {
+            echo $productID .$sellerID;
                 //remove from cart
                 $cart = new Cart();
-                if($cart->RemoveFromCart($product_id, $seller_id))
+                if($cart->RemoveFromCart($productID, $sellerID))
                 {
-                    $obj = "Product Added To Cart";
+                    $obj = "Product Removed From Cart";
                 }else{
-                    $obj = "Product Not Added To Cart";
+                    $obj = "Product Not Removed From Cart";
                 }
                 echo json_encode($obj);
             } catch (Exception $ex) {

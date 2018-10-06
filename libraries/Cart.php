@@ -28,11 +28,16 @@ class Cart {
     public function RemoveFromCart($productID, $sellerID) {
         $productID = filter_var($productID, FILTER_SANITIZE_NUMBER_INT);
         $sellerID = filter_var($sellerID, FILTER_SANITIZE_NUMBER_INT);
-//        $user = Sessions::get('uid');
-//        $sessionID = Sessions::get('s_id');
+        $user = Sessions::get('uid');
+        $sessionID = Sessions::get('s_id');
         try {
+            if($user == "")
+            {
+                $user = -1;
+            }
+            
             if ($this->getCartID($user, $sessionID)) {
-                $this->removeproductFromCart($productID, $sellerID);
+                return $this->removeproductFromCart($productID, $sellerID);
             } else {
                 // couldnt get cart id;
             }
@@ -83,7 +88,7 @@ class Cart {
         $userID = Sessions::get('uid');
         try {
 //add product to cart
-            $query = $this->database->prepare("INSERT INTO cartDesc (cart_id, product_id, quantity, seller_id) VALUES (:c_id, :p_id, :quant, :s_id) ON DUPLICATE KEY UPDATE seller_id = :s_id, quantity = :quant, removedFromCart= False");
+            $query = $this->database->prepare("INSERT INTO cartDesc (cart_id, product_id, quantity, seller_id) VALUES (:c_id, :p_id, :quant, :s_id) ON DUPLICATE KEY UPDATE seller_id = :s_id, quantity = :quant, removedFromCart=0");
             $query->bindParam(":s_id", $sellerID);
             $query->bindParam(":p_id", $productID);
             $query->bindParam(":quant", $quantity);
@@ -108,14 +113,19 @@ class Cart {
     private function removeproductFromCart($productID, $sellerID) {
 //check if cart exists ie: cartPaid = false(it should unless item has been paid for already)
         try {
-            $query = $this->database->prepare("UPDATE cartDesc SET removedFromCart= True WHERE seller_id= :s_id, product_id= :p_id, cart_id= :c_id");
+            $cartID = filter_var($this->cartid, FILTER_SANITIZE_NUMBER_INT);
+            echo Sessions::get('uid') . Sessions::get('uid');
+            $query = $this->database->prepare("UPDATE cartDesc SET removedFromCart=1 WHERE seller_id= :s_id AND product_id= :p_id AND cart_id= :c_id");
             $query->bindParam(":s_id", $sellerID);
             $query->bindParam(":p_id", $productID);
-            $query->bindParam(":c_id", $this->cartid);
+            $query->bindParam(":c_id", $cartID);
+            echo $this->cartid;
+            echo "s=" . $sellerID . "p=". $productID;
             if ($query->execute()) {
                 return true;
                 echo "hah";
             } else {
+                echo $query->errorCode() . $query->errorInfo();
                 echo "nah";
                 /*
                  * Error Logging Here: echo "uh oh..";
@@ -133,7 +143,10 @@ class Cart {
 
     private function createproductCart($user) {
 //create cart based off of the user id
-
+        if($user =="")
+        {
+            $user = null;
+        }
         $session_id = Sessions::get('s_id');
         try {
             $query = $this->database->prepare("SELECT * FROM cart WHERE (user_id=:u_id OR session_id=:s_id) AND cart_paid='0'");
@@ -158,6 +171,10 @@ class Cart {
     }
 
     private function getCartID($user, $session_id) {
+        if($user == "")
+        {
+            $user = -1;
+        }
         $query = $this->database->prepare("SELECT * FROM cart WHERE (user_id=:u_id OR session_id=:s_id) AND cart_paid='0'");
         $query->bindParam(":u_id", $user);
         $query->bindParam(":s_id", $session_id);

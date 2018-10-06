@@ -16,8 +16,11 @@ class cart_model extends Model {
             } else {
                 $database = new Database();
                 $user_id = Sessions::get('uid');
+                if ($user_id == "") {
+                    $user_id = -1;
+                }
                 $sessionID = Sessions::get('s_id');
-                $query = $database->prepare("SELECT * FROM cart c INNER JOIN cartDesc cd ON c.id = cd.cart_id WHERE (c.user_id=:u_id OR c.session_id=:sid) AND c.cart_paid=0");
+                $query = $database->prepare("SELECT * FROM cart c INNER JOIN cartDesc cd ON c.id = cd.cart_id WHERE (c.user_id=:u_id OR c.session_id=:sid) AND c.cart_paid=0 AND cd.removedFromCart=0");
                 if (isset($user_id)) {
                     $query->bindParam(':u_id', $user_id);
                 }
