@@ -7,7 +7,7 @@ class Database extends PDO {
     private $DATABASE_PORT = '3306';
     private $DATABASE_NAME = 'msdCore';
     private $DATABASE_USER = 'externalSite';
-    private $DATABASE_PASS = '';
+    private $DATABASE_PASS = 'precipicebeats';
     public $link = NULL;
 
     public function __construct() {
@@ -15,7 +15,8 @@ class Database extends PDO {
             try {
                 $this->link = parent::__construct($this->DATABASE_TYPE . ':host=' . $this->DATABASE_HOST . ';port='. $this->DATABASE_PORT .';dbname=' . $this->DATABASE_NAME, $this->DATABASE_USER, $this->DATABASE_PASS);
                 return $this->link;
-            } catch (PDOException $e) {
+            } catch (PDOException $e) {                
+                echo "here";
                 die($e->getMessage());
             }
         }

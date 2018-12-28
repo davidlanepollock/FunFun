@@ -31,6 +31,7 @@ class login_model extends Model {
     public function log_user($email, $password) {
 
         if (empty($email) != true && empty($password) != true) {
+           
             $db = $this->database;
             $password = hash('sha256', trim(strip_tags(stripslashes($password))));
             $query = $db->select("SELECT * FROM users WHERE email='{$email}' && password='{$password}'");

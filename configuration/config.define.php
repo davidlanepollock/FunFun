@@ -1,7 +1,7 @@
 <?php
 /* Sessions */
 define('APP_URL', '');
-define('APP_NAME', 'MSD Merch');
+define('APP_NAME', 'MSD Mersch');
 
 /* Website Link roots */
 define('LIBS_ROOT','libraries/'); // Library root

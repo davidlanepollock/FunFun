@@ -26,6 +26,20 @@
 
         </div>
     </div>
+    <div id="cart-total">
+
+        <div id="cart-total-price">
+            Subtotal: $123.33
+        </div>
+        <div id="cart-total-shippingtax">
+            Estimated Shipping & Tax: $9.95
+        </div>
+        <div id="cart-total-final">
+            Estimated Total: $150.22
+        </div>
+        <input type="button" id="cart-checkout-button" value="Proceed To Checkout">
+        <input type="button" id="cart-return-button" value="Continue Shopping">
+    </div>
 
 </div>
 <div id="product_spec_placeholder"></div>

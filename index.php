@@ -1,7 +1,8 @@
 <?php
-
+echo "hither";
 date_default_timezone_set('America/Chicago');
 require 'configuration/config.config.php';
+  
 Sessions::start_session();
 if(Sessions::get("s_id") == '')
 {
