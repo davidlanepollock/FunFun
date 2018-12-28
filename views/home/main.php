@@ -1,19 +1,7 @@
 <script src='<?= APP_URL; ?>/public_files/javascript/home.js' ></script>
+<div class="core-con">
 <div class="core">
-    <div class="menu content-full">
-        <div class="menu-item">
-            <a href="<?= APP_URL; ?>/campaign">Campaigns</a>
-        </div>
-        <div class="menu-item">
-            <a href="<?= APP_URL; ?>/adsets">Ad Sets</a>
-        </div>
-        <div class="menu-item">
-            <a href="<?= APP_URL; ?>/audiences">Audiences</a>
-        </div>
-        <div class="menu-right">
-            Home
-        </div>
-    </div>
+    <?php require 'views/campaign/campaignHead.php';?>
     <div class="column">
         <div class="container-head">
             Ad Statistics
@@ -81,4 +69,5 @@
         right
     </div>
     <div class="content-full">graph</div>
+</div>
 </div>

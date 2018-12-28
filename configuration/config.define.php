@@ -1,6 +1,6 @@
 <?php
 /* Sessions */
-define('APP_URL', '');
+define('APP_URL', '/Fun');
 define('APP_NAME', 'MSD Mersch');
 
 /* Website Link roots */

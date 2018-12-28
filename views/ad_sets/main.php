@@ -2,7 +2,7 @@
 <script src="<?= APP_URL; ?>/public_files/javascript/campaign.js"></script>
 <div class="core-con">
     <div class="core">
-    <?php require 'views/campaign/campaignHead.php';?>
+        <?php require 'views/campaign/campaignHead.php';?>
 
         <div class="content-full">
             <div class="menu content-full">
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div id="campaignList" class="content-full-body">
-                Your Campaigns will appear here.
+                Your Ad Sets will appear here.
             </div>
             <script>MSDCampaign();</script>
         </div></div>

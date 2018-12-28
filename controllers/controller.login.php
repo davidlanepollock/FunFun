@@ -10,7 +10,6 @@ class login extends Controller {
         $this->view->title = "Login | Website";
         $this->view->stylesheet = "login.css";
         $this->view->render('login/main');
-        echo "top";
     }
 
     public function login_user() {
@@ -21,10 +20,6 @@ class login extends Controller {
         }
         echo 'Enter username!';
         return false;
-    }
-
-    public function hello() {
-        echo "hi";
     }
 
 }

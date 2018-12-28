@@ -1,12 +1,18 @@
-body {
-    background: #eee;
-    width: 100%;
+html, body {
     height: 100%;
+}
+body{
+    background: #eee;
+    display:flex;
+    flex-direction: column;
 }
 
 @media screen and (min-width: 800px){
+    .core{
+        flex: 1 0 auto;
+    }
     .signup-middle {
-        width: 30%;
+        width: 400px;
         background: white;
         margin: 0% auto;
         border-radius: 5px;
@@ -16,7 +22,6 @@ body {
     }
 
     .signup-middle > .sm-head {
-        width: 99%;
         border-bottom: 1px solid #EEE;
     }
 
@@ -32,7 +37,6 @@ body {
 
 
     .signup-middle > .inner-sm {
-        width: 100%;
     }
 
     .signup-middle > .inner-sm form {

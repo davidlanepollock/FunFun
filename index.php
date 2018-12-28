@@ -1,5 +1,5 @@
 <?php
-echo "hither";
+
 date_default_timezone_set('America/Chicago');
 require 'configuration/config.config.php';
   
@@ -15,7 +15,14 @@ if (isset($_GET['url'])) {
     $url = explode('/', $_GET['url']);
     $file = "controllers/controller." . $url[0] . ".php";
     $libFile = "libraries/" . $url[0] . ".php";
-
+   if($url[0] == "public_files")
+   {
+       if(file_exists($url[1]))
+       {
+           echo "haha";
+           return false;
+       }
+   }
     if (file_exists($file)) {
         require $file;
         $controller = new $url[0];
@@ -56,6 +63,7 @@ if (isset($_GET['url'])) {
         return false;
     }
 } else if (Sessions::get('uid') != "") {
+    echo "hee";
     require 'controllers/controller.login.php';
     echo 'bottom';
     $index = new login;

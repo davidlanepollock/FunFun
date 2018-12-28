@@ -1,4 +1,5 @@
 <br /><script src='<?= APP_URL; ?>/public_files/javascript/login.js'></script>
+<div class="core">
 <div class='signup-middle'>
 	<div class='sm-head'>
             <h3>Login to <?= APP_NAME; ?>'s System</h3>
@@ -26,4 +27,5 @@
 			</form>
 		</div><span style='' id='response'></span>
 	</div>
+</div>
 </div>
