@@ -1,5 +1,6 @@
 
 Repository: FunFun
+
 Description: A PHP MVC framework with signup and login functionality. Easily scalable for miscellaneous purposes. Makes asynchronous database calls with Ajax using both JQuery and also Javascript (to provide more control over the connection). Last step is to add a scalable session management system (such as Redis).
 
 Picture 1 shows signup page
