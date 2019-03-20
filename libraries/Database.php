@@ -7,7 +7,7 @@ class Database extends PDO {
     private $DATABASE_PORT = '';
     private $DATABASE_NAME = '';
     private $DATABASE_USER = '';
-    private $DATABASE_PASS = '';
+    private $DATABASE_PASS = ''; 
     public $link = NULL;
 
     public function __construct() {
