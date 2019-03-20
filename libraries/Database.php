@@ -3,11 +3,11 @@
 class Database extends PDO {
 
     private $DATABASE_TYPE = 'mysql';
-    private $DATABASE_HOST = 'coresite.cxo4ugzr4nwd.us-east-1.rds.amazonaws.com';
-    private $DATABASE_PORT = '3306';
-    private $DATABASE_NAME = 'msdCore';
-    private $DATABASE_USER = 'externalSite';
-    private $DATABASE_PASS = 'precipicebeats';
+    private $DATABASE_HOST = '';
+    private $DATABASE_PORT = '';
+    private $DATABASE_NAME = '';
+    private $DATABASE_USER = '';
+    private $DATABASE_PASS = '';
     public $link = NULL;
 
     public function __construct() {
